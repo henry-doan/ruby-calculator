@@ -23,10 +23,11 @@ def inputs
 	puts "#{@history}"
 	puts "operator"
 	operator = gets.strip
+	puts "#{operator}"
 	puts " Enter the second number:"
 	second_number = gets.to_f
 	puts "Calculating..."
-	second_answer = continue(operator, @history, second_number)
+	second_answer = continue(operator, answer, second_number)
 	puts "#{second_answer}"
 end
 
@@ -51,13 +52,13 @@ def continue(operator, answer, second_number)
 	# @history = calculate_answer(operator, @history, second_number)
 	@history << answer
 	if operator == "+"
-    	@history + second_number
+    	answer + second_number
   	elsif operator == "-"
-   		@history - second_number
+   		answer - second_number
  	elsif operator == "*"
-    	@history * second_number
+    	answer * second_number
   	elsif operator == "/"
-    	@history / second_number
+    	answer / second_number
  	else
   		puts "#{operator} is not supported, try one of these + - / *"
 		inputs
@@ -68,7 +69,8 @@ while true
 	greeting
 	inputs
   	puts "Type q to leave or press enter to return"
-	exit(0) if gets.strip == 'q'
+	exit(0) if gets.strip == 'q's
+	end
 	inputs
 
 end
